@@ -19,7 +19,6 @@ export class ChatService {
     this.socket.connect(this.chaturl + sender)
 
     this.socketSubscription = this.socket.messages.subscribe((message: string) => {
-      console.log(message);
       onReceived(JSON.parse(message))
     })
   }
@@ -32,7 +31,6 @@ export class ChatService {
         'content': input,
         'status': 'CHAT'
       };
-      console.log(chatMessage);
       this.socket.send(JSON.stringify(chatMessage))
     }
   }

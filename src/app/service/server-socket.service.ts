@@ -13,7 +13,6 @@ export class ServerSocketService {
     if (this.messages)
       return;
     this.inputStream = new QueueingSubject<string>()
-    console.log("connect ___________________________");
     this.messages = websocketConnect(url, this.inputStream = new QueueingSubject<string>()
     ).messages.share()
   }
